@@ -1,0 +1,231 @@
+@media (prefers-color-scheme: dark) {
+	:root:root {
+		--logo: url('/static/mediawiki-light.svg');
+		--accent-color: white;
+		--seconday-color: hsl(0, 0%, 50%);
+	}
+	/* CSS placed here will affect users of the Vector skin */
+	/* Override Vector colour scheme to make it dark */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: #c1c1c1
+	}
+	hr {
+		color: #222
+	}
+	.editOptions {
+		background-color: #333;
+		border-color: #4c4c4c
+	}
+	input,
+	textarea {
+		background-color: #4c4c4c;
+		border-color: #4c4c4c;
+		color: #c1c1c1
+	}
+	a,
+	.mw-body a.external,
+	.mw-body a.extiw {
+		color: var(--accent-color);
+	}
+	a:visited,
+	.mw-body a.external:visited,
+	.mw-body a.extiw:visited {
+		color: #8a7f6c
+	}
+	a.new,
+	#p-personal a.new {
+		color: #d44
+	}
+	div.thumbinner,
+	.catlinks {
+		background-color: #4c4c4c;
+		border-color: #666
+	}
+	#toc,
+	div.toc,
+	ul#filetoc,
+	li.gallerybox div.thumb {
+		background-color: #4c4c4c;
+		border-color: #666
+	}
+	code {
+		background-color: inherit;
+		color: inherit
+	}
+	table.mw_metadata td,
+	table.mw_metadata th,
+	table.wikitable,
+	table.wikitable > * > tr > th,
+	table.wikitable > * > tr > td,
+	pre {
+		color: #c1c1c1;
+		background-color: #4c4c4c;
+		border-color: #666
+	}
+	table.mw_metadata th,
+	table.wikitable > * > tr > th {
+		background-color: #595959
+	}
+	table.diff {
+		background-color: #4c4c4c
+	}
+	td .diffchange {
+		color: #4c4c4c
+	}
+	#pagehistory li.selected,
+	td.diff-context {
+		background-color: inherit;
+		color: inherit
+	}
+	ul.mw-gallery-packed-hover li.gallerybox:hover div.gallerytextwrapper,
+	ul.mw-gallery-packed-overlay li.gallerybox div.gallerytextwrapper,
+	ul.mw-gallery-packed-hover li.gallerybox.mw-gallery-focused div.gallerytextwrapper {
+		background-color: rgba(0, 0, 0, 0.8)
+	}
+	#left-navigation div.vectorTabs,
+	#right-navigation div.vectorTabs {
+		background-image: inherit;
+		background-color: var(--seconday-color)
+	}
+	#left-navigation div.vectorTabs ul,
+	#right-navigation div.vectorTabs ul {
+		background-color: var(--seconday-color)
+	}
+	#left-navigation div.vectorTabs ul li,
+	#right-navigation div.vectorTabs ul li {
+		background-color: #222;
+		background-image: linear-gradient(#2e2e2e 20%, #222 100%)
+	}
+	#left-navigation div.vectorTabs li.new a,
+	#right-navigation div.vectorTabs li.new a,
+	#left-navigation div.vectorTabs li.new a:visited,
+	#right-navigation div.vectorTabs li.new a:visited {
+		color: #d44
+	}
+	#left-navigation div.vectorTabs li.selected,
+	#right-navigation div.vectorTabs li.selected {
+		background-color: #333;
+		background-image: linear-gradient(var(--accent-color) 0, #333 10%)
+	}
+	#left-navigation div.vectorTabs li.selected a,
+	#right-navigation div.vectorTabs li.selected a,
+	#left-navigation div.vectorTabs li.selected a:visited,
+	#right-navigation div.vectorTabs li.selected a:visited {
+		color: #8a7f6c
+	}
+	#left-navigation div.vectorTabs li a,
+	#right-navigation div.vectorTabs li a {
+		color: var(--accent-color)
+	}
+	#left-navigation div.vectorTabs span,
+	#right-navigation div.vectorTabs span {
+		background: transparent;
+	}
+	div#mw-head #right-navigation div.vectorMenu h3 {
+		background: inherit;
+	}
+	div#mw-head div.vectorMenu h3 span {
+		color: var(--accent-color)
+	}
+	div.vectorMenu h3 a {
+		background: inherit;
+	}
+	div.vectorMenu ul {
+		background-color: black;
+		border-color: #0c0c0c;
+	}
+	div.vectorMenu li a {
+		color: var(--accent-color)
+	}
+	div.vectorMenu li.selected a,
+	div.vectorMenu li.selected a:visited {
+		color: #8a7f6c;
+	}
+	div.vectorMenu#p-cactions div.menu {
+		border-color: #666;
+	}
+	div.vectorMenu#p-cactions ul {
+		background-color: #4c4c4c;
+	}
+	#mw-navigation div#mw-panel div.portal {
+		background-image: none;
+		border-top-color: #4c4c4c;
+	}
+	body {
+		background-color: #2a2a2a
+	}
+	.mw-body {
+		border-color: var(--seconday-color);
+		background-color: #333;
+		color: #c1c1c1;
+	}
+	div#simpleSearch {
+		border-color: #aaa;
+		color: black;
+		background-color: white;
+	}
+	div#simpleSearch input {
+		background-color: transparent;
+		color: black
+	}
+	div#simpleSearch #searchInput.placeholder {
+		color: #999
+	}
+	div#simpleSearch #searchInput:-ms-input-placeholder {
+		color: #999
+	}
+	div#simpleSearch #searchInput:-moz-placeholder {
+		color: #999
+	}
+	div.vectorTabs ul li {
+		background-color: #f3f3f3;
+	}
+	div.vectorTabs li.new a,
+	div.vectorTabs li.new a:visited {
+		color: #a55858
+	}
+	div.vectorTabs li.selected a,
+	div.vectorTabs li.selected a:visited {
+		color: #333;
+	}
+	div.vectorTabs li a {
+		color: var(--accent-color);
+	}
+	div.vectorMenu h3 span {
+		color: #4d4d4d
+	}
+	div.vectorMenu div.menu {
+		background-color: white;
+	}
+	div.vectorMenu li a {
+		color: var(--accent-color);
+	}
+	div.vectorMenu li.selected a,
+	div.vectorMenu li.selected a:visited {
+		color: #333;
+	}
+	#mw-page-base {
+		background-color: transparent;
+		background-image: none;
+	}
+	div#mw-panel div.portal h3 {
+		color: #4d4d4d;
+	}
+	div#mw-panel div.portal div.body ul li a {
+		color: var(--accent-color)
+	}
+	div#mw-panel div.portal div.body ul li a:visited {
+		color: #8a7f6c
+	}
+	div#mw-panel div.portal.first {
+		background-image: none;
+	}
+	div#footer ul li {
+		color: #333;
+	}
+}

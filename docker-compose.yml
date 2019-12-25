@@ -29,6 +29,8 @@ services:
       - ./static:/var/www/mediawiki/static:ro
       - ./ExtraLocalSettings.php:/var/www/mediawiki/ExtraLocalSettings.php:ro
       - ./extensions/MobileFrontend:/var/www/mediawiki/extensions/MobileFrontend:ro
+      - ./skins/Vector/screen.less:/var/www/mediawiki/skins/Vector/screen.less:ro
+      - ./skins/Vector/patch:/var/www/mediawiki/skins/Vector/patch:ro
   mediawiki_mysql:
     image: mysql:5.7
     container_name: mediawiki_mysql

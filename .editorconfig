@@ -1,0 +1,5 @@
+[*]
+indent_size = 4
+
+[{Makefile, **/*.less}]
+indent_style = tab

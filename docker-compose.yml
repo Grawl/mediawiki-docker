@@ -1,0 +1,44 @@
+version: '3'
+services:
+  mediawiki_wiki:
+    image: credija/mediawiki
+    container_name: mediawiki_wiki
+    environment:
+      MEDIAWIKI_SERVER: $MEDIAWIKI_SERVER
+      MEDIAWIKI_SITENAME: $MEDIAWIKI_SITENAME
+      MEDIAWIKI_LANGUAGE_CODE: $MEDIAWIKI_LANGUAGE_CODE
+      MEDIAWIKI_SECRET_KEY: $MEDIAWIKI_SECRET_KEY
+      MEDIAWIKI_DB_TYPE: mysql
+      MEDIAWIKI_DB_HOST: mediawiki_mysql
+      MEDIAWIKI_DB_PORT: 3306
+      MEDIAWIKI_DB_NAME: wikidb
+      MEDIAWIKI_DB_USER: wikiuser
+      MEDIAWIKI_DB_TABLE_OPTIONS: ENGINE=InnoDB, DEFAULT CHARSET=binary
+      MEDIAWIKI_DB_PASSWORD: mysecret
+      MEDIAWIKI_ENABLE_UPLOADS: 1
+      MEDIAWIKI_EXTENSION_VISUAL_EDITOR_ENABLED: 1
+      MEDIAWIKI_DEFAULT_SKIN: vector
+      MEDIAWIKI_GUEST_READ: $MEDIAWIKI_GUEST_READ
+      MEDIAWIKI_GUEST_EDIT: $MEDIAWIKI_GUEST_EDIT
+      MEDIAWIKI_GUEST_CREATEACCOUNT: $MEDIAWIKI_GUEST_CREATEACCOUNT
+    ports:
+      - "${HOST_HTTP_PORT}:8080"
+    depends_on:
+      - mediawiki_mysql
+    volumes:
+      - ./static:/var/www/mediawiki/static
+      - ./ExtraLocalSettings.php:/var/www/mediawiki/ExtraLocalSettings.php:ro
+  mediawiki_mysql:
+    image: mysql:5.7
+    container_name: mediawiki_mysql
+    environment:
+      MYSQL_DATABASE: wikidb
+      MYSQL_USER: wikiuser
+      MYSQL_PASSWORD: mysecret
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+    ports:
+      - "${HOST_MYSQL_PORT}:3306"
+    volumes:
+      - mediawiki_mysql:/var/lib/mysql
+volumes:
+  mediawiki_mysql:

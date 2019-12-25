@@ -20,7 +20,7 @@ Copy `.env.example` as `.env` and change environment variables.
 - [x] Static files access
 - [x] Custom logo and favicon
 - [x] VisualEditor plugin
-- [ ] MobileFrontend plugin
+- [x] MobileFrontend plugin
 - [ ] `(prefers-color-scheme: dark)` (try [Aether](https://www.mediawiki.org/wiki/Skin:Aether) skin)
 - [ ] Set wiki admin credentials
 - [ ] External API auth

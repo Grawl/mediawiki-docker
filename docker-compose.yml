@@ -26,8 +26,9 @@ services:
     depends_on:
       - mediawiki_mysql
     volumes:
-      - ./static:/var/www/mediawiki/static
+      - ./static:/var/www/mediawiki/static:ro
       - ./ExtraLocalSettings.php:/var/www/mediawiki/ExtraLocalSettings.php:ro
+      - ./extensions/MobileFrontend:/var/www/mediawiki/extensions/MobileFrontend:ro
   mediawiki_mysql:
     image: mysql:5.7
     container_name: mediawiki_mysql

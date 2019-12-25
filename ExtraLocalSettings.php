@@ -51,3 +51,8 @@ $wgLogo = "/static/mediawiki.svg";
  */
 $wgFavicon = '/static/manifest/favicon.ico';
 $wgAppleTouchIcon = '/static/manifest/apple-touch-icon.png';
+/**
+ * MobileFrontend
+ */
+wfLoadExtension( 'MobileFrontend' );
+$wgMFDefaultSkinClass = 'SkinVector';

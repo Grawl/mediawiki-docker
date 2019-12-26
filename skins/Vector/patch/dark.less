@@ -1,8 +1,9 @@
 @media (prefers-color-scheme: dark) {
-	:root:root {
-		--logo: url('/static/mediawiki-light.svg');
+	:root {
 		--accent-color: white;
-		--seconday-color: hsl(0, 0%, 50%);
+		--accent-color-dark: hsl(0, 0%, 65%);
+		--seconday-color: hsl(0, 0%, 10%);
+		--body-background-color: hsl(0, 0%, 16%);
 	}
 	/* CSS placed here will affect users of the Vector skin */
 	/* Override Vector colour scheme to make it dark */
@@ -12,50 +13,56 @@
 	h4,
 	h5,
 	h6 {
-		color: #c1c1c1
+		color: hsl(0, 0%, 76%);
 	}
 	hr {
-		color: #222
+		color: hsl(0, 0%, 13%);
 	}
 	.editOptions {
-		background-color: #333;
-		border-color: #4c4c4c
+		background-color: hsl(0, 0%, 20%);
+		border-color: hsl(0, 0%, 30%);
 	}
 	input,
 	textarea {
-		background-color: #4c4c4c;
-		border-color: #4c4c4c;
-		color: #c1c1c1
+		background-color: hsl(0, 0%, 30%);
+		border-color: hsl(0, 0%, 30%);
+		color: hsl(0, 0%, 76%);
 	}
-	a,
-	.mw-body a.external,
-	.mw-body a.extiw {
+	a {
 		color: var(--accent-color);
+	}
+	.mw-body a {
+		text-decoration: underline;
+	}
+	:root .mw-headline a,
+	:root code a {
+		text-decoration: none;
 	}
 	a:visited,
 	.mw-body a.external:visited,
 	.mw-body a.extiw:visited {
-		color: #8a7f6c
+		color: var(--accent-color-dark);
 	}
 	a.new,
 	#p-personal a.new {
-		color: #d44
+		color: hsl(0, 69%, 57%);
 	}
 	div.thumbinner,
 	.catlinks {
-		background-color: #4c4c4c;
-		border-color: #666
+		background-color: hsl(0, 0%, 30%);
+		border-color: hsl(0, 0%, 40%);
 	}
 	#toc,
 	div.toc,
 	ul#filetoc,
 	li.gallerybox div.thumb {
-		background-color: #4c4c4c;
-		border-color: #666
+		background-color: hsl(0, 0%, 30%);
+		border-color: hsl(0, 0%, 40%);
 	}
 	code {
 		background-color: inherit;
-		color: inherit
+		color: inherit;
+		border-color: hsl(0, 0%, 45%);
 	}
 	table.mw_metadata td,
 	table.mw_metadata th,
@@ -63,64 +70,64 @@
 	table.wikitable > * > tr > th,
 	table.wikitable > * > tr > td,
 	pre {
-		color: #c1c1c1;
-		background-color: #4c4c4c;
-		border-color: #666
+		color: hsl(0, 0%, 76%);
+		background-color: hsl(0, 0%, 30%);
+		border-color: hsl(0, 0%, 40%);
 	}
 	table.mw_metadata th,
 	table.wikitable > * > tr > th {
-		background-color: #595959
+		background-color: hsl(0, 0%, 35%);
 	}
 	table.diff {
-		background-color: #4c4c4c
+		background-color: hsl(0, 0%, 30%);
 	}
 	td .diffchange {
-		color: #4c4c4c
+		color: hsl(0, 0%, 30%);
 	}
 	#pagehistory li.selected,
 	td.diff-context {
 		background-color: inherit;
-		color: inherit
+		color: inherit;
 	}
 	ul.mw-gallery-packed-hover li.gallerybox:hover div.gallerytextwrapper,
 	ul.mw-gallery-packed-overlay li.gallerybox div.gallerytextwrapper,
 	ul.mw-gallery-packed-hover li.gallerybox.mw-gallery-focused div.gallerytextwrapper {
-		background-color: rgba(0, 0, 0, 0.8)
+		background-color: hsla(0, 0%, 0%, 0.8);
 	}
 	#left-navigation div.vectorTabs,
 	#right-navigation div.vectorTabs {
-		background-image: inherit;
-		background-color: var(--seconday-color)
+		background-image: linear-gradient(to top, var(--seconday-color), transparent);
+		background-color: transparent;
 	}
 	#left-navigation div.vectorTabs ul,
 	#right-navigation div.vectorTabs ul {
-		background-color: var(--seconday-color)
+		background-color: var(--seconday-color);
 	}
 	#left-navigation div.vectorTabs ul li,
 	#right-navigation div.vectorTabs ul li {
-		background-color: #222;
-		background-image: linear-gradient(#2e2e2e 20%, #222 100%)
+		background-color: hsl(0, 0%, 13%);
+		background-image: linear-gradient(var(--body-background-color) 20%, hsl(0, 0%, 12.9%));
 	}
 	#left-navigation div.vectorTabs li.new a,
 	#right-navigation div.vectorTabs li.new a,
 	#left-navigation div.vectorTabs li.new a:visited,
 	#right-navigation div.vectorTabs li.new a:visited {
-		color: #d44
+		color: hsl(0, 69%, 57%);
 	}
 	#left-navigation div.vectorTabs li.selected,
 	#right-navigation div.vectorTabs li.selected {
-		background-color: #333;
-		background-image: linear-gradient(var(--accent-color) 0, #333 10%)
+		background-color: hsl(0, 0%, 20%);
+		background-image: linear-gradient(var(--accent-color) 0, hsl(0, 0%, 20%) 10%);
 	}
 	#left-navigation div.vectorTabs li.selected a,
 	#right-navigation div.vectorTabs li.selected a,
 	#left-navigation div.vectorTabs li.selected a:visited,
 	#right-navigation div.vectorTabs li.selected a:visited {
-		color: #8a7f6c
+		color: hsl(0, 0%, 62%);
 	}
 	#left-navigation div.vectorTabs li a,
 	#right-navigation div.vectorTabs li a {
-		color: var(--accent-color)
+		color: var(--accent-color);
 	}
 	#left-navigation div.vectorTabs span,
 	#right-navigation div.vectorTabs span {
@@ -130,74 +137,74 @@
 		background: inherit;
 	}
 	div#mw-head div.vectorMenu h3 span {
-		color: var(--accent-color)
+		color: var(--accent-color);
 	}
 	div.vectorMenu h3 a {
 		background: inherit;
 	}
 	div.vectorMenu ul {
 		background-color: black;
-		border-color: #0c0c0c;
+		border-color: hsl(0, 0%, 5%);
 	}
 	div.vectorMenu li a {
-		color: var(--accent-color)
+		color: var(--accent-color);
 	}
 	div.vectorMenu li.selected a,
 	div.vectorMenu li.selected a:visited {
-		color: #8a7f6c;
+		color: hsl(38, 12%, 48%);
 	}
 	div.vectorMenu#p-cactions div.menu {
-		border-color: #666;
+		border-color: hsl(0, 0%, 40%);
 	}
 	div.vectorMenu#p-cactions ul {
-		background-color: #4c4c4c;
+		background-color: hsl(0, 0%, 30%);
 	}
 	#mw-navigation div#mw-panel div.portal {
 		background-image: none;
-		border-top-color: #4c4c4c;
+		border-top-color: hsl(0, 0%, 30%);
 	}
 	body {
-		background-color: #2a2a2a
+		background-color: var(--body-background-color);
 	}
 	.mw-body {
 		border-color: var(--seconday-color);
-		background-color: #333;
-		color: #c1c1c1;
+		background-color: hsl(0, 0%, 20%);
+		color: hsl(0, 0%, 76%);
 	}
 	div#simpleSearch {
-		border-color: #aaa;
+		border-color: hsl(0, 0%, 67%);
 		color: black;
 		background-color: white;
 	}
 	div#simpleSearch input {
 		background-color: transparent;
-		color: black
+		color: black;
 	}
 	div#simpleSearch #searchInput.placeholder {
-		color: #999
+		color: hsl(0, 0%, 60%);
 	}
 	div#simpleSearch #searchInput:-ms-input-placeholder {
-		color: #999
+		color: hsl(0, 0%, 60%);
 	}
 	div#simpleSearch #searchInput:-moz-placeholder {
-		color: #999
+		color: hsl(0, 0%, 60%);
 	}
 	div.vectorTabs ul li {
-		background-color: #f3f3f3;
+		background-color: hsl(0, 0%, 95%);
 	}
 	div.vectorTabs li.new a,
 	div.vectorTabs li.new a:visited {
-		color: #a55858
+		color: hsl(0, 30%, 50%);
 	}
 	div.vectorTabs li.selected a,
 	div.vectorTabs li.selected a:visited {
-		color: #333;
+		color: hsl(0, 0%, 20%);
 	}
 	div.vectorTabs li a {
 		color: var(--accent-color);
 	}
 	div.vectorMenu h3 span {
-		color: #4d4d4d
+		color: hsl(0, 0%, 30%);
 	}
 	div.vectorMenu div.menu {
 		background-color: white;
@@ -207,25 +214,28 @@
 	}
 	div.vectorMenu li.selected a,
 	div.vectorMenu li.selected a:visited {
-		color: #333;
+		color: hsl(0, 0%, 20%);
 	}
 	#mw-page-base {
 		background-color: transparent;
 		background-image: none;
 	}
 	div#mw-panel div.portal h3 {
-		color: #4d4d4d;
+		color: hsl(0, 0%, 60%);
 	}
 	div#mw-panel div.portal div.body ul li a {
-		color: var(--accent-color)
+		color: var(--accent-color);
 	}
 	div#mw-panel div.portal div.body ul li a:visited {
-		color: #8a7f6c
+		color: hsl(0, 0%, 75%);
 	}
 	div#mw-panel div.portal.first {
 		background-image: none;
 	}
 	div#footer ul li {
-		color: #333;
+		color: hsl(0, 0%, 20%);
+	}
+	#pt-anonuserpage {
+		color: hsl(0, 0%, 60%);
 	}
 }

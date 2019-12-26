@@ -22,5 +22,7 @@ Copy `.env.example` as `.env` and change environment variables.
 - [x] VisualEditor plugin
 - [x] MobileFrontend plugin
 - [x] `(prefers-color-scheme: dark)`
+  - [ ] VisualEditor pane
+  - [ ] Upload modal
 - [ ] Set wiki admin credentials
 - [ ] External API auth

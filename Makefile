@@ -12,6 +12,7 @@ list: ## Show available commands list
 
 init: ## Initiate app first time
 	@make up
+	@git submodule update --init
 	@sleep 10 # TODO listen for database is ready to operate
 	@make install
 

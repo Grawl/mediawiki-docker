@@ -9,7 +9,8 @@ https://www.mediawiki.org/
 ## Install
 
 1. Clone this repository
-2. `make init`
+2. `cp .env.example .env`
+3. `make init`
 
 ## Customize
 
@@ -24,5 +25,6 @@ Copy `.env.example` as `.env` and change environment variables.
 - [x] `(prefers-color-scheme: dark)`
   - [ ] VisualEditor pane
   - [ ] Upload modal
-- [ ] Set wiki admin credentials
+  - [ ] Settings
+- [x] Set wiki admin credentials
 - [ ] External API auth

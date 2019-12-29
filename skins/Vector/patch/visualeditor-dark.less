@@ -65,7 +65,9 @@
 	}
 	:root .oo-ui-iconElement-icon,
 	:root .oo-ui-indicatorElement-indicator {
-		filter: invert(1);
+		&:not(.oo-ui-checkboxInputWidget-checkIcon) {
+			filter: invert(1);
+		}
 	}
 	:root .oo-ui-toolbar-bar {
 		color: inherit;
@@ -79,6 +81,11 @@
 	}
 	:root .oo-ui-popupToolGroup.oo-ui-widget-enabled {
 		> .oo-ui-popupToolGroup-handle:hover {
+			background-color: hsl(0, 0%, 30%);
+		}
+	}
+	:root .oo-ui-listToolGroup {
+		.oo-ui-tool.oo-ui-widget-enabled:hover {
 			background-color: hsl(0, 0%, 30%);
 		}
 	}
@@ -108,8 +115,13 @@
 			}
 		}
 	}
-	:root .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button {
-		color: hsl(0, 96%, 81%);
+	:root:root .oo-ui-tool-link {
+		text-decoration: none;
+	}
+	:root .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive {
+		> .oo-ui-buttonElement-button {
+			color: hsl(0, 96%, 81%);
+		}
 	}
 	:root .oo-ui-windowManager-modal.oo-ui-windowManager-floating > .oo-ui-dialog > .oo-ui-window-frame {
 		border-color: var(--border-color);
@@ -131,10 +143,28 @@
 	:root .ve-ui-mwSaveDialog-license {
 		color: inherit;
 	}
-	.warningbox a {
+	:root .warningbox a {
 		color: inherit;
 	}
-	.editOptions {
+	:root .editOptions {
+		color: inherit;
+	}
+	:root .oo-ui-popupToolGroup.oo-ui-popupToolGroup-active {
+		> .oo-ui-popupToolGroup-handle:hover {
+			color: inherit
+		}
+	}
+	:root .oo-ui-listToolGroup {
+		.oo-ui-tool-active.oo-ui-widget-enabled {
+			background-color: hsl(0, 0%, 35%);
+		}
+	}
+	:root .oo-ui-outlineOptionWidget.oo-ui-optionWidget-selected {
+		background-color: hsl(0, 0%, 40%);
+		color: inherit;
+	}
+	:root .oo-ui-outlineOptionWidget.oo-ui-optionWidget-highlighted {
+		background-color: hsl(0, 0%, 32%);
 		color: inherit;
 	}
 }

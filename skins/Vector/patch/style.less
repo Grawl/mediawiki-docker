@@ -2,12 +2,20 @@
 @import 'visualeditor-dark';
 :root {
 	--logo: url('/static/mediawiki.svg');
+	scroll-behavior: smooth;
 }
 @media (prefers-color-scheme: dark) {
 	:root {
 		--logo: url('/static/mediawiki-light.svg');
 	}
 }
-.mw-wiki-logo {
+:root .mw-wiki-logo {
 	background-image: var(--logo);
+}
+:root .wikitable {
+	display: block;
+	overflow: auto;
+}
+:root div#p-logo {
+	display: block;
 }

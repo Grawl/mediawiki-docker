@@ -1,15 +1,14 @@
 version: '3'
 services:
-  mediawiki_wiki:
+  wiki:
     image: credija/mediawiki
-    container_name: mediawiki_wiki
     environment:
       MEDIAWIKI_SERVER: $MEDIAWIKI_SERVER
       MEDIAWIKI_SITENAME: $MEDIAWIKI_SITENAME
       MEDIAWIKI_LANGUAGE_CODE: $MEDIAWIKI_LANGUAGE_CODE
       MEDIAWIKI_SECRET_KEY: $MEDIAWIKI_SECRET_KEY
       MEDIAWIKI_DB_TYPE: mysql
-      MEDIAWIKI_DB_HOST: mediawiki_mysql
+      MEDIAWIKI_DB_HOST: mysql
       MEDIAWIKI_DB_PORT: 3306
       MEDIAWIKI_DB_NAME: wikidb
       MEDIAWIKI_DB_USER: wikiuser
@@ -24,16 +23,15 @@ services:
     ports:
       - "${HOST_HTTP_PORT}:8080"
     depends_on:
-      - mediawiki_mysql
+      - mysql
     volumes:
       - ./static:/var/www/mediawiki/static:ro
       - ./ExtraLocalSettings.php:/var/www/mediawiki/ExtraLocalSettings.php:ro
       - ./extensions/MobileFrontend:/var/www/mediawiki/extensions/MobileFrontend:ro
       - ./skins/Vector/screen.less:/var/www/mediawiki/skins/Vector/screen.less:ro
       - ./skins/Vector/patch:/var/www/mediawiki/skins/Vector/patch:ro
-  mediawiki_mysql:
+  mysql:
     image: mysql:5.7
-    container_name: mediawiki_mysql
     environment:
       MYSQL_DATABASE: wikidb
       MYSQL_USER: wikiuser
@@ -42,6 +40,6 @@ services:
     ports:
       - "${HOST_MYSQL_PORT}:3306"
     volumes:
-      - mediawiki_mysql:/var/lib/mysql
+      - mysql:/var/lib/mysql
 volumes:
-  mediawiki_mysql:
+  mysql:

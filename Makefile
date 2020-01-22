@@ -5,6 +5,7 @@ PASSWORD_MIN_LENGTH := 8
 
 include .env
 export $(shell sed 's/=.*//' .env)
+.PHONY: list init reinit install up
 
 list: ## Show available commands list
 	@printf "\033[33m%s:\033[0m\n" 'Available commands'
@@ -18,12 +19,12 @@ init: ## Initiate app first time
 
 reinit: ## Initiate app from scratch
 	@docker-compose down --remove-orphans
-	@if docker volume rm $$(basename "$$PWD")_mediawiki_mysql; then echo 'volume removed'; fi
+	@if docker volume rm $$(basename "$$PWD")_mysql; then echo 'volume removed'; fi
 	@make init
 
 install: ## Install MediaWiki
 	@make test
-	@docker exec -it mediawiki_wiki /script/install.sh \
+	@docker exec -it $$(basename "$$PWD")_wiki_1 /script/install.sh \
 	"$$MEDIAWIKI_ADMIN_USERNAME" "$$MEDIAWIKI_ADMIN_PASSWORD"
 
 up: ## Launch app

@@ -1,10 +1,7 @@
 #!/usr/bin/make
 
 SHELL := /bin/bash # Use bash syntax
-PASSWORD_MIN_LENGTH := 8
 
-include .env
-export $(shell sed 's/=.*//' .env)
 .PHONY: list init reinit install up
 
 list: ## Show available commands list
@@ -15,22 +12,12 @@ init: ## Initiate app first time
 	@make up
 	@git submodule update --init
 	@sleep 10 # TODO listen for database is ready to operate
-	@make install
+	@sh ./install.sh
 
 reinit: ## Initiate app from scratch
 	@docker-compose down --remove-orphans
 	@if docker volume rm $$(basename "$$PWD")_mysql; then echo 'volume removed'; fi
 	@make init
 
-install: ## Install MediaWiki
-	@make test
-	@docker exec -it $$(basename "$$PWD")_wiki_1 /script/install.sh \
-	"$$MEDIAWIKI_ADMIN_USERNAME" "$$MEDIAWIKI_ADMIN_PASSWORD"
-
 up: ## Launch app
 	@docker-compose up -d --build
-
-test: ## Check password length
-	@if [[ $${#MEDIAWIKI_ADMIN_PASSWORD} -lt ${PASSWORD_MIN_LENGTH} ]]; \
-	then echo "Required password length is ${PASSWORD_MIN_LENGTH} or more symbols"; \
-	exit 1; fi
